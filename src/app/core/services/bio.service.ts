@@ -1,9 +1,15 @@
+import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 
+import { Bio } from '../models/bio';
+
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class BioService {
+  constructor(private http: HttpClient) {}
 
-  constructor() { }
+  getBio() {
+    return this.http.get<Bio>('assets/data/bio.json');
+  }
 }

@@ -1,9 +1,27 @@
+import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 
+import { Observable } from 'rxjs';
+import { filter, mergeAll, toArray } from 'rxjs/operators';
+import { Project } from '../models/project';
+
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class ProjectsService {
+  constructor(private http: HttpClient) {}
 
-  constructor() { }
+  getProjects(featured?: boolean): Observable<Project[]> {
+    let projects$ = this.http.get<Project[]>('assets/data/project.json');
+
+    if (featured) {
+      return projects$.pipe(
+        mergeAll(),
+        filter((project) => project.featured || false),
+        toArray()
+      );
+    }
+
+    return projects$;
+  }
 }

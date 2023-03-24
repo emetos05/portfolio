@@ -3,12 +3,12 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
-import { HeaderComponent } from './core/header/header.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { CoreModule } from './core/core.module';
 
 @NgModule({
-  declarations: [AppComponent, HeaderComponent],
-  imports: [BrowserModule, AppRoutingModule, NgbModule],
+  declarations: [AppComponent],
+  imports: [BrowserModule, AppRoutingModule, NgbModule, CoreModule],
   providers: [],
   bootstrap: [AppComponent],
 })
