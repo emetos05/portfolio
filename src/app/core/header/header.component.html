@@ -1,11 +1,11 @@
 <div class="d-flex min-vh-10 w-100 justify-content-center px-4 py-3">
-  <div
+  <a
     class="d-flex justify-content-start"
     *ngIf="bio$ | async as bio"
     routerLink="/">
     <h2 class="fw-normal">{{ bio.firstName }}</h2>
     <h2 class="fw-light">{{ bio.lastName }}</h2>
-  </div>
+  </a>
   <div
     class="d-none d-md-flex flex-grow-1 justify-content-end align-items-start">
     <button
