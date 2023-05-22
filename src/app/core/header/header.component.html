@@ -1,22 +1,19 @@
-<div class="d-flex min-vh-10 w-100 justify-content-center pb-3 pt-3 pr-4 pl-4">
+<div class="d-flex min-vh-10 w-100 justify-content-center px-4 py-3">
   <div
     class="d-flex justify-content-start"
     *ngIf="bio$ | async as bio"
-    routerLink="/"
-  >
+    routerLink="/">
     <h2 class="fw-normal">{{ bio.firstName }}</h2>
     <h2 class="fw-light">{{ bio.lastName }}</h2>
   </div>
   <div
-    class="d-none d-md-flex flex-grow-1 justify-content-end align-items-start"
-  >
+    class="d-none d-md-flex flex-grow-1 justify-content-end align-items-start">
     <button
       type="button"
-      class="ml-2 mr-2 btn btn-outline-dark border-0 font-weight-bold"
+      class="mx-2 btn btn-outline-dark border-0 fw-normal"
       *ngFor="let item of menuItems"
       [routerLink]="(isHome$ | async) ? item.homePath : item.pagePath"
-      [fragment]="(isHome$ | async) ? item.fragment : ''"
-    >
+      [fragment]="(isHome$ | async) ? item.fragment : ''">
       {{ item.title }}
     </button>
   </div>
@@ -30,8 +27,7 @@
           ngbDropdownItem
           *ngFor="let item of menuItems"
           [routerLink]="(isHome$ | async) ? item.homePath : item.pagePath"
-          [fragment]="(isHome$ | async) ? item.fragment : ''"
-        >
+          [fragment]="(isHome$ | async) ? item.fragment : ''">
           {{ item.title }}
         </button>
       </div>
