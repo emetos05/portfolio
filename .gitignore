@@ -36,6 +36,8 @@ yarn-error.log
 /libpeerconnection.log
 testem.log
 /typings
+.gitignore
+.prettierrc
 
 # System files
 .DS_Store
