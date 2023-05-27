@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, HostListener, OnInit } from '@angular/core';
 import { BioService } from '../services/bio.service';
 import { HeaderService } from '../services/header.service';
 
@@ -17,6 +17,17 @@ export class HeaderComponent implements OnInit {
 
   bio$ = this.bioService.getBio();
   isHome$ = this.headerService.isHome();
+
+  // Uncomment for fixed header
+  // fixheader: boolean = false;
+
+  // @HostListener('window:scroll', ['$event']) onScroll() {
+  //   if (window.scrollY > 200) {
+  //     this.fixheader = true;
+  //   } else {
+  //     this.fixheader = false;
+  //   }
+  // }
 
   menuItems = [
     {

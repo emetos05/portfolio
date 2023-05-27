@@ -2,3 +2,15 @@ a {
   text-decoration: none;
   color: black;
 }
+
+/* Uncomment for fixed header */
+/* .fixed {
+  position: fixed;
+  transition: 0.2s linear;
+  top: 0%;
+}
+
+.notfixed {
+  position: static;
+  transition: 0.2s linear;
+} */
